@@ -23,6 +23,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  simple_animations: ^2.2.1
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -59,6 +60,11 @@ flutter:
      - assets/app_icon.png
      - assets/google-plus.png
      - assets/background_image.png
+     - assets/calm.png
+     - assets/handshake.png
+     - assets/book.png
+     - assets/saying_bg1.jpg
+     - assets/saying_bg2.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
