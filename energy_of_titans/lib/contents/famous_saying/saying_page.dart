@@ -1,7 +1,6 @@
 
 import 'package:energy_of_titans/contents/famous_saying/today_saying_page.dart';
 import 'package:energy_of_titans/custom_root/fade_route.dart';
-import 'package:energy_of_titans/custom_root/rotation_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
@@ -11,6 +10,7 @@ class SayingPage extends StatefulWidget {
   _SayingPageState createState() => _SayingPageState();
 }
 
+Size _size;
 List _themeItemList = <Widget> [
   _themeItem('사 랑', 1),
   _themeItem('도 전', 2),
@@ -19,12 +19,13 @@ List _themeItemList = <Widget> [
   _themeItem('비즈니스', 5),
 ];
 
-Size _size;
-
 class _SayingPageState extends State<SayingPage> {
   @override
   Widget build(BuildContext context) {
+
+
     _size = MediaQuery.of(context).size;
+
     return Scaffold(
       backgroundColor: Colors.white,
       body: AnnotatedRegion<SystemUiOverlayStyle>(
@@ -97,23 +98,25 @@ Container _sayingContent(context) {
 }
 
 Widget _themeItem(title, index) {
-  return Container(
-    width: _size.width / 2.5,
-    height: _size.width / 2.5 * 1.16,
-    child: Padding(
-      padding: const EdgeInsets.only(
-          bottom: 8.0, top: 8.0, right: 8.0),
-      child: Card(
-        shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(20.0)),
-        elevation: 4.0,
-        child: Container(
-          decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(20.0),
-              image: DecorationImage(
-                  image: AssetImage('assets/theme_bg$index.jpg'),
-                  fit: BoxFit.cover)),
-          child: Center(child: Text('$title', style: TextStyle(color: Colors.white, fontSize: 14,fontWeight: FontWeight.bold),)),
+  return GestureDetector(
+    child: Container(
+      width: _size.width / 2.5,
+      height: _size.width / 2.5 * 1.16,
+      child: Padding(
+        padding: const EdgeInsets.only(
+            bottom: 8.0, top: 8.0, right: 8.0),
+        child: Card(
+          shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(20.0)),
+          elevation: 4.0,
+          child: Container(
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20.0),
+                image: DecorationImage(
+                    image: AssetImage('assets/theme_bg$index.jpg'),
+                    fit: BoxFit.cover)),
+            child: Center(child: Text('$title', style: TextStyle(color: Colors.white, fontSize: 14,fontWeight: FontWeight.bold),)),
+          ),
         ),
       ),
     ),
@@ -126,14 +129,15 @@ Container _sayingView() {
     decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20.0),
         image: DecorationImage(
-            image: AssetImage('assets/saying_bg2.jpg'), fit: BoxFit.cover)),
+            image: AssetImage('assets/saying_bg3.jpg'), fit: BoxFit.cover)),
     child: Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Text(
-            '"세상은 네가 만드는 것\n네 마음을 자유롭게 해."',
+            '"인류의 최대 약점은 너무나\n 불가능이란 말에 익숙해져 있다는 것이다."',
             style: TextStyle(color: Colors.white, fontSize: 18, height: 1.5),
+            textAlign: TextAlign.center,
           ),
           Padding(padding: EdgeInsets.all(16.0)),
           Text(
@@ -141,7 +145,7 @@ Container _sayingView() {
             style: TextStyle(color: Colors.white),
           ),
           Text(
-            "아미르 칸의 영화, '지상의 별처럼' 中",
+            "나폴레온 힐",
             style: TextStyle(color: Colors.white),
           ),
         ],
