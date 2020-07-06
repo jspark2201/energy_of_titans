@@ -73,12 +73,12 @@ class _ExplainPageState extends State<ExplainPage> {
       }, itemCount: _itemCount,);
   }
 
-  Container firstPage() {
-    return Container(
-      color: Colors.red,
-      child: Text('page1'),
-    );
-  }
+//  Container firstPage() {
+//    return Container(
+//      color: Colors.red,
+//      child: Text('page1'),
+//    );
+//  }
 
 
 }

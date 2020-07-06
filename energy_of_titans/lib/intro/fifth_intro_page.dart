@@ -1,10 +1,11 @@
 import 'package:energy_of_titans/custom_root/fade_route.dart';
 import 'package:energy_of_titans/custom_root/rotation_route.dart';
 import 'package:energy_of_titans/fade_in.dart';
+import 'package:energy_of_titans/contents/famous_saying/saying_page.dart';
 import 'package:energy_of_titans/intro/explain_page.dart';
 import 'package:energy_of_titans/login_page.dart';
 import 'package:energy_of_titans/custom_root/scale_route.dart';
-import 'package:energy_of_titans/tab_page.dart';
+import 'package:energy_of_titans/contents/tab_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -27,7 +28,7 @@ class _FifthIntroPageState extends State<FifthIntroPage> {
           Navigator.pushReplacement(context,
 //                RotationRoute(page: LoginPage()),
                 FadeRoute(page: TabPage()),
-//              ScaleRoute(page: LoginPage()),
+//              ScaleRoute(page: SayingPage()),
 //            MaterialPageRoute(builder: (context) => LoginPage()),
           );
         },

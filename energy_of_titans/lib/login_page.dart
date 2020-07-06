@@ -1,4 +1,4 @@
-import 'package:energy_of_titans/tab_page.dart';
+import 'package:energy_of_titans/contents/tab_page.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
