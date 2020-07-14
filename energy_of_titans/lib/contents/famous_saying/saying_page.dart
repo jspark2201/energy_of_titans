@@ -101,7 +101,7 @@ Widget _themeItem(title, index) {
   return GestureDetector(
     child: Container(
       width: _size.width / 2.5,
-      height: _size.width / 2.5 * 1.16,
+      height: _size.width / 2.5 * 1.1,
       child: Padding(
         padding: const EdgeInsets.only(
             bottom: 8.0, top: 8.0, right: 8.0),

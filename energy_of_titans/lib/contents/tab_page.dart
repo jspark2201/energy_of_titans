@@ -44,17 +44,21 @@ class _TabPageState extends State<TabPage> {
   }
 
   CurvedNavigationBar _curvedNavigation() {
+
     return CurvedNavigationBar(
-      color: Color(0xfffe6a16),
+      color: Colors.orange,
       backgroundColor: Colors.white,
+      buttonBackgroundColor: Colors.orange,
+      animationCurve: Curves.easeInOut,
 
       key: _bottomNavigatorKey,
       items: <Widget>[
         Icon(Icons.change_history, size: 30, color: Colors.white),
-        Icon(Icons.spa, size: 30, color: Colors.white),
+        Icon(Icons.spa, size: 30, color:Colors.white),
         Icon(Icons.book, size: 30, color: Colors.white),
         Icon(Icons.account_circle, size: 30, color: Colors.white),
       ],
+
       onTap: (index) {
           setState(() {
             _page = index;

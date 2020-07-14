@@ -27,7 +27,7 @@ class _FifthIntroPageState extends State<FifthIntroPage> {
         onTap: () {
           Navigator.pushReplacement(context,
 //                RotationRoute(page: LoginPage()),
-                FadeRoute(page: TabPage()),
+                FadeRoute(page: LoginPage()),
 //              ScaleRoute(page: SayingPage()),
 //            MaterialPageRoute(builder: (context) => LoginPage()),
           );

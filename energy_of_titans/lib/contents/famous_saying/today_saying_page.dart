@@ -139,7 +139,7 @@ class MenuWidget extends StatelessWidget {
       child: Container(
         width: width,
         height: height / 6,
-        color: Color(0xfffe6a16),
+        color: Colors.orange,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: <Widget>[
@@ -148,7 +148,7 @@ class MenuWidget extends StatelessWidget {
               backgroundColor: Colors.yellow,
               child: CircleAvatar(
                 radius: 25,
-                backgroundColor: Color(0xfffe6a16),
+                backgroundColor: Colors.orange,
                 child: IconButton(
                   onPressed: () {
                   },
@@ -162,7 +162,7 @@ class MenuWidget extends StatelessWidget {
               backgroundColor: Colors.yellow,
               child: CircleAvatar(
                 radius: 25,
-                backgroundColor: Color(0xfffe6a16),
+                backgroundColor: Colors.orange,
                 child: IconButton(
                   onPressed: () {
                   },
@@ -176,7 +176,7 @@ class MenuWidget extends StatelessWidget {
               backgroundColor: Colors.yellow,
               child: CircleAvatar(
                 radius: 25,
-                backgroundColor: Color(0xfffe6a16),
+                backgroundColor: Colors.orange,
                 child: IconButton(
                   onPressed: () {
                   },
