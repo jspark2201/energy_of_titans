@@ -51,66 +51,59 @@ Widget _morningDiaryPage(BuildContext context) {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
-              FadeIn(
-                1,
-                Align(
-                  alignment: Alignment.topLeft,
-                  child: RichText(
-                    text: TextSpan(
-                      text: '',
-                      style: DefaultTextStyle.of(context).style,
-                      children: <TextSpan>[
-                        TextSpan(
-                            text: '아침 에너지\n',
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 25.0)),
-                        TextSpan(text: '\n', style: TextStyle(fontSize: 8.0)),
-                        TextSpan(
-                            text: '매일 아침 다섯 가지 질문에 답변해 보세요.\n',
-                            style: TextStyle(color: Colors.black54)),
-                        TextSpan(
-                            text: '부담갖지 마세요. 딱 한 줄이면 충분합니다!\n',
-                            style: TextStyle(color: Colors.black54)),
-                        TextSpan(
-                            text: '당신의 아침에 긍정적 에너지가 함께합니다.',
-                            style: TextStyle(color: Colors.black54)),
-                      ],
-                    ),
+              Align(
+                alignment: Alignment.topLeft,
+                child: RichText(
+                  text: TextSpan(
+                    text: '',
+                    style: DefaultTextStyle.of(context).style,
+                    children: <TextSpan>[
+                      TextSpan(
+                          text: '아침 에너지\n',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 25.0)),
+                      TextSpan(text: '\n', style: TextStyle(fontSize: 8.0)),
+                      TextSpan(
+                          text: '매일 아침 다섯 가지 질문에 답변해 보세요.\n',
+                          style: TextStyle(color: Colors.black54)),
+                      TextSpan(
+                          text: '부담갖지 마세요. 딱 한 줄이면 충분합니다!\n',
+                          style: TextStyle(color: Colors.black54)),
+                      TextSpan(
+                          text: '당신의 아침에 긍정적 에너지가 함께합니다.',
+                          style: TextStyle(color: Colors.black54)),
+                    ],
                   ),
                 ),
               ),
               Padding(padding: EdgeInsets.all(8.0)),
-              FadeIn(
-                1.33,
-                Card(
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20.0)),
-                  color: Colors.orange,
-                  elevation: 4.0,
-                  child: Container(
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20.0),
+              Card(
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20.0)),
+                color: Colors.orange,
+                elevation: 4.0,
+                child: Container(
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20.0),
                       image: DecorationImage(
                           image: AssetImage('assets/morning.png'),
-                          fit: BoxFit.cover)
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Column(
-                        children: <Widget>[
-                          Padding(padding: EdgeInsets.all(8.0)),
-                          _thank1Card(),
-                          Padding(padding: EdgeInsets.all(8.0)),
-                          _thank2Card(),
-                          Padding(padding: EdgeInsets.all(8.0)),
-                          _happiness1Card(),
-                          Padding(padding: EdgeInsets.all(8.0)),
-                          _happiness2Card(),
-                          Padding(padding: EdgeInsets.all(8.0)),
-                          _todayTaskCard(),
-                          Padding(padding: EdgeInsets.all(8.0)),
-                        ],
-                      ),
+                          fit: BoxFit.cover)),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Column(
+                      children: <Widget>[
+                        Padding(padding: EdgeInsets.all(8.0)),
+                        _thank1Card(),
+                        Padding(padding: EdgeInsets.all(8.0)),
+                        _thank2Card(),
+                        Padding(padding: EdgeInsets.all(8.0)),
+                        _happiness1Card(),
+                        Padding(padding: EdgeInsets.all(8.0)),
+                        _happiness2Card(),
+                        Padding(padding: EdgeInsets.all(8.0)),
+                        _todayTaskCard(),
+                        Padding(padding: EdgeInsets.all(8.0)),
+                      ],
                     ),
                   ),
                 ),
@@ -118,22 +111,19 @@ Widget _morningDiaryPage(BuildContext context) {
               SizedBox(
                 height: 12.0,
               ),
-              FadeIn(
-                1.66,
-                Container(
-                  height: 50,
-                  width: _size.width,
-                  margin: EdgeInsets.only(bottom: 10.0),
-                  child: RaisedButton(
-                    onPressed: () {},
-                    child: Text(
-                      '작성하기',
-                      style: TextStyle(color: Colors.white),
-                    ),
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20.0)),
-                    color: Colors.deepOrange,
+              Container(
+                height: 50,
+                width: _size.width,
+                margin: EdgeInsets.only(bottom: 10.0),
+                child: RaisedButton(
+                  onPressed: () {},
+                  child: Text(
+                    '작성하기',
+                    style: TextStyle(color: Colors.white),
                   ),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20.0)),
+                  color: Colors.deepOrange,
                 ),
               ),
             ],
@@ -156,66 +146,59 @@ Widget _dinnerDiaryPage(BuildContext context) {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
-              FadeIn(
-                1,
-                Align(
-                  alignment: Alignment.topLeft,
-                  child: RichText(
-                    text: TextSpan(
-                      text: '',
-                      style: DefaultTextStyle.of(context).style,
-                      children: <TextSpan>[
-                        TextSpan(
-                            text: '저녁 에너지\n',
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 25.0)),
-                        TextSpan(text: '\n', style: TextStyle(fontSize: 8.0)),
-                        TextSpan(
-                            text: '매일 저녁 다섯 가지 질문에 답변해 보세요.\n',
-                            style: TextStyle(color: Colors.black54)),
-                        TextSpan(
-                            text: '간단한 답변으로 당신의 하루를 정리할 수 있습니다.\n',
-                            style: TextStyle(color: Colors.black54)),
-                        TextSpan(
-                            text: '타이탄의 에너지가 당신의 멋진 내일을 기원합니다!',
-                            style: TextStyle(color: Colors.black54)),
-                      ],
-                    ),
+              Align(
+                alignment: Alignment.topLeft,
+                child: RichText(
+                  text: TextSpan(
+                    text: '',
+                    style: DefaultTextStyle.of(context).style,
+                    children: <TextSpan>[
+                      TextSpan(
+                          text: '저녁 에너지\n',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 25.0)),
+                      TextSpan(text: '\n', style: TextStyle(fontSize: 8.0)),
+                      TextSpan(
+                          text: '매일 저녁 다섯 가지 질문에 답변해 보세요.\n',
+                          style: TextStyle(color: Colors.black54)),
+                      TextSpan(
+                          text: '간단한 답변으로 당신의 하루를 정리할 수 있습니다.\n',
+                          style: TextStyle(color: Colors.black54)),
+                      TextSpan(
+                          text: '타이탄의 에너지가 당신의 멋진 내일을 기원합니다!',
+                          style: TextStyle(color: Colors.black54)),
+                    ],
                   ),
                 ),
               ),
               Padding(padding: EdgeInsets.all(8.0)),
-              FadeIn(
-                1.33,
-                Card(
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20.0)),
-                  color: Colors.orange,
-                  elevation: 4.0,
-                  child: Container(
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20.0),
-                        image: DecorationImage(
-                            image: AssetImage('assets/night.png'),
-                            fit: BoxFit.cover)
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Column(
-                        children: <Widget>[
-                          Padding(padding: EdgeInsets.all(8.0)),
-                          _thank1Card(),
-                          Padding(padding: EdgeInsets.all(8.0)),
-                          _thank2Card(),
-                          Padding(padding: EdgeInsets.all(8.0)),
-                          _betterDayCard(),
-                          Padding(padding: EdgeInsets.all(8.0)),
-                          _coolCard(),
-                          Padding(padding: EdgeInsets.all(8.0)),
-                          _tomorrowTaskCard(),
-                          Padding(padding: EdgeInsets.all(8.0)),
-                        ],
-                      ),
+              Card(
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20.0)),
+                color: Colors.orange,
+                elevation: 4.0,
+                child: Container(
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20.0),
+                      image: DecorationImage(
+                          image: AssetImage('assets/night.png'),
+                          fit: BoxFit.cover)),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Column(
+                      children: <Widget>[
+                        Padding(padding: EdgeInsets.all(8.0)),
+                        _thank1Card(),
+                        Padding(padding: EdgeInsets.all(8.0)),
+                        _thank2Card(),
+                        Padding(padding: EdgeInsets.all(8.0)),
+                        _betterDayCard(),
+                        Padding(padding: EdgeInsets.all(8.0)),
+                        _coolCard(),
+                        Padding(padding: EdgeInsets.all(8.0)),
+                        _tomorrowTaskCard(),
+                        Padding(padding: EdgeInsets.all(8.0)),
+                      ],
                     ),
                   ),
                 ),
@@ -223,22 +206,19 @@ Widget _dinnerDiaryPage(BuildContext context) {
               SizedBox(
                 height: 12.0,
               ),
-              FadeIn(
-                1.66,
-                Container(
-                  height: 50,
-                  width: _size.width,
-                  margin: EdgeInsets.only(bottom: 10.0),
-                  child: RaisedButton(
-                    onPressed: () {},
-                    child: Text(
-                      '작성하기',
-                      style: TextStyle(color: Colors.white),
-                    ),
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20.0)),
-                    color: Colors.deepOrange,
+              Container(
+                height: 50,
+                width: _size.width,
+                margin: EdgeInsets.only(bottom: 10.0),
+                child: RaisedButton(
+                  onPressed: () {},
+                  child: Text(
+                    '작성하기',
+                    style: TextStyle(color: Colors.white),
                   ),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20.0)),
+                  color: Colors.deepOrange,
                 ),
               ),
             ],
@@ -248,7 +228,6 @@ Widget _dinnerDiaryPage(BuildContext context) {
     ),
   );
 }
-
 
 Card _thank1Card() {
   return Card(
