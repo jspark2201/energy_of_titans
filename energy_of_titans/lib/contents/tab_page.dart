@@ -1,10 +1,10 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
-import 'package:energy_of_titans/contents/account_page.dart';
 import 'package:energy_of_titans/contents/diary/diary_page.dart';
-import 'package:energy_of_titans/contents/meditation_page.dart';
 import 'package:flutter/material.dart';
 
+import 'account/account_page.dart';
 import 'famous_saying/saying_page.dart';
+import 'meditation/meditation_page.dart';
 
 class TabPage extends StatefulWidget {
   @override

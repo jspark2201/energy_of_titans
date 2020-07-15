@@ -39,7 +39,7 @@ class _TodaySayingPageState extends State<TodaySayingPage> {
           width: _size.width,
           decoration: BoxDecoration(
               image: DecorationImage(
-                  image: AssetImage('assets/saying_bg3.jpg'),
+                  image: AssetImage('assets/saying_bg1.jpg'),
                   fit: BoxFit.cover)),
           child: Stack(
             children: <Widget>[
@@ -115,8 +115,9 @@ class _TodaySayingPageState extends State<TodaySayingPage> {
               AnimatedPositioned(
                   curve: Curves.easeInOut,
                   duration: Duration(milliseconds: 200),
-                  left: 0,
-                  bottom: (showBottomMenu) ? 0 : -(_size.height / 5),
+                  left: 20,
+                  right: 20,
+                  bottom: (showBottomMenu) ? 40 : -(_size.height / 7),
                   child: MenuWidget()),
             ],
           ),
@@ -136,56 +137,60 @@ class MenuWidget extends StatelessWidget {
 
     return ClipRRect(
       borderRadius: BorderRadius.all(Radius.circular(20.0)),
-      child: Container(
-        width: width,
-        height: height / 6,
-        color: Colors.orange,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: <Widget>[
-            CircleAvatar(
-              radius: 27,
-              backgroundColor: Colors.yellow,
-              child: CircleAvatar(
-                radius: 25,
-                backgroundColor: Colors.orange,
-                child: IconButton(
-                  onPressed: () {
-                  },
-                  icon: Icon(Icons.share, color: Colors.yellow, size: 30,),
+      child: BackdropFilter(
+        filter: ImageFilter.blur(sigmaX: 5.0, sigmaY: 5.0),
+        child: Container(
+          width: width,
+          height: height / 7,
+          color: Colors.white24,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: <Widget>[
+              CircleAvatar(
+                radius: 27,
+                backgroundColor: Colors.white,
+                child: CircleAvatar(
+                  radius: 25,
+                  backgroundColor: Colors.orange,
+                  child: IconButton(
+                    onPressed: () {
+                    },
+                    icon: Icon(Icons.share, color: Colors.white, size: 30,),
+                  ),
                 ),
               ),
-            ),
 
-            CircleAvatar(
-              radius: 27,
-              backgroundColor: Colors.yellow,
-              child: CircleAvatar(
-                radius: 25,
-                backgroundColor: Colors.orange,
-                child: IconButton(
-                  onPressed: () {
-                  },
-                  icon: Icon(Icons.bookmark_border, color: Colors.yellow, size: 30,),
+              CircleAvatar(
+                radius: 27,
+                backgroundColor: Colors.white,
+                child: CircleAvatar(
+                  radius: 25,
+                  backgroundColor: Colors.orange,
+                  child: IconButton(
+                    onPressed: () {
+                    },
+                    icon: Icon(Icons.bookmark_border, color: Colors.white, size: 30,),
+                  ),
                 ),
               ),
-            ),
 
-            CircleAvatar(
-              radius: 27,
-              backgroundColor: Colors.yellow,
-              child: CircleAvatar(
-                radius: 25,
-                backgroundColor: Colors.orange,
-                child: IconButton(
-                  onPressed: () {
-                  },
-                  icon: Icon(Icons.file_download, color: Colors.yellow, size: 30,),
+              CircleAvatar(
+                radius: 27,
+                backgroundColor: Colors.white,
+                child: CircleAvatar(
+                  radius: 25,
+                  backgroundColor: Colors.orange,
+                  child: IconButton(
+                    onPressed: () {
+                      print('사진 저장하기');
+                    },
+                    icon: Icon(Icons.file_download, color: Colors.white, size: 30,),
+                  ),
                 ),
-              ),
-            )
+              )
 
-          ],
+            ],
+          ),
         ),
       ),
     );

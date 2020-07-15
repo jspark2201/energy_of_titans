@@ -31,6 +31,14 @@ class _MeditationPageState extends State<MeditationPage> {
                   image: DecorationImage(
                       image: AssetImage('assets/meditation1.png'),
                       fit: BoxFit.cover),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(0.5),
+                      spreadRadius: 5,
+                      blurRadius: 7,
+                      offset: Offset(0, 3), // changes position of shadow
+                    ),
+                  ],
                 ),
                 width: _size.width,
                 child: Padding(
@@ -75,7 +83,15 @@ class _MeditationPageState extends State<MeditationPage> {
                     color: Colors.deepOrangeAccent,
                     image: DecorationImage(
                         image: AssetImage('assets/meditation3.png'),
-                        fit: BoxFit.cover)),
+                        fit: BoxFit.cover),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(0.5),
+                      spreadRadius: 5,
+                      blurRadius: 7,
+                      offset: Offset(0, 3), // changes position of shadow
+                    ),
+                  ],),
                 width: _size.width,
                 child: Padding(
                   padding: const EdgeInsets.all(12.0),

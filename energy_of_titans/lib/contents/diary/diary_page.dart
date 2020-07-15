@@ -91,7 +91,7 @@ Widget _morningDiaryPage(BuildContext context) {
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20.0),
                       image: DecorationImage(
-                          image: AssetImage('assets/morning.jpg'),
+                          image: AssetImage('assets/morning.png'),
                           fit: BoxFit.cover)
                     ),
                     child: Padding(
@@ -196,7 +196,7 @@ Widget _dinnerDiaryPage(BuildContext context) {
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20.0),
                         image: DecorationImage(
-                            image: AssetImage('assets/night.jpg'),
+                            image: AssetImage('assets/night.png'),
                             fit: BoxFit.cover)
                     ),
                     child: Padding(
