@@ -1,3 +1,6 @@
+import 'package:energy_of_titans/contents/diary/morning_write_page.dart';
+import 'package:energy_of_titans/contents/diary/night_write_page.dart';
+import 'package:energy_of_titans/custom_root/fade_route.dart';
 import 'package:expansion_tile_card/expansion_tile_card.dart';
 import 'package:flutter/material.dart';
 
@@ -80,7 +83,6 @@ Widget _morningDiaryPage(BuildContext context) {
               Card(
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20.0)),
-                color: Colors.orange,
                 elevation: 4.0,
                 child: Container(
                   decoration: BoxDecoration(
@@ -116,7 +118,10 @@ Widget _morningDiaryPage(BuildContext context) {
                 width: _size.width,
                 margin: EdgeInsets.only(bottom: 10.0),
                 child: RaisedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(context, FadeRoute(page: MorningWritePage()),);
+//                    Navigator.push(context, MaterialPageRoute(builder: (context) => MorningWirtePage()),);
+                  },
                   child: Text(
                     '작성하기',
                     style: TextStyle(color: Colors.white),
@@ -175,7 +180,6 @@ Widget _dinnerDiaryPage(BuildContext context) {
               Card(
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20.0)),
-                color: Colors.orange,
                 elevation: 4.0,
                 child: Container(
                   decoration: BoxDecoration(
@@ -211,7 +215,9 @@ Widget _dinnerDiaryPage(BuildContext context) {
                 width: _size.width,
                 margin: EdgeInsets.only(bottom: 10.0),
                 child: RaisedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(context, FadeRoute(page: NightWritePage()),);
+                  },
                   child: Text(
                     '작성하기',
                     style: TextStyle(color: Colors.white),

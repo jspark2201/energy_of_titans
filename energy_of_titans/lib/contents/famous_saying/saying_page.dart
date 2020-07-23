@@ -26,6 +26,7 @@ class _SayingPageState extends State<SayingPage> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
+        centerTitle: true,
         backgroundColor: Colors.white,
         title: Text('명언'),
       ),

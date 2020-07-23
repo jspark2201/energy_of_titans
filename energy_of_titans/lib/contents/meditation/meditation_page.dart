@@ -1,3 +1,5 @@
+import 'package:energy_of_titans/contents/meditation/basic_guide.dart';
+import 'package:energy_of_titans/contents/meditation/seven_days_guide.dart';
 import 'package:flutter/material.dart';
 
 class MeditationPage extends StatefulWidget {
@@ -14,6 +16,7 @@ class _MeditationPageState extends State<MeditationPage> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
+        centerTitle: true,
         backgroundColor: Colors.white,
         title: Text('명상'),
       ),
@@ -59,7 +62,10 @@ class _MeditationPageState extends State<MeditationPage> {
                         width: 100,
                         height: 40,
                         child: RaisedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                              Navigator.push(context, MaterialPageRoute(builder: (context) =>
+                              BasicGuide()));
+                          },
                           child: Text(
                             '시작하기',
                             style: TextStyle(color: Colors.white),
@@ -80,7 +86,6 @@ class _MeditationPageState extends State<MeditationPage> {
               child: Container(
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20.0),
-                    color: Colors.deepOrangeAccent,
                     image: DecorationImage(
                         image: AssetImage('assets/meditation3.png'),
                         fit: BoxFit.cover),
@@ -111,7 +116,10 @@ class _MeditationPageState extends State<MeditationPage> {
                         width: 100,
                         height: 40,
                         child: RaisedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(context, MaterialPageRoute(builder: (context) =>
+                                SevenDaysGuide()));
+                          },
                           child: Text(
                             '시작하기',
                             style: TextStyle(color: Colors.white),
