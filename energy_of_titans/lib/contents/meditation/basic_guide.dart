@@ -8,7 +8,7 @@ class BasicGuide extends StatefulWidget {
 Size _size;
 
 class _BasicGuideState extends State<BasicGuide> {
-  bool _played = false;
+  bool _isPlaying = false;
   bool _finished = false;
   double temp = 0;
 
@@ -45,145 +45,154 @@ class _BasicGuideState extends State<BasicGuide> {
                   ),
                 ),
               ),
-              Positioned(
-                bottom: 40,
-                left: 20,
-                right: 20,
-                child: Container(
-                  width: _size.width,
-                  height: _size.height / 4,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20.0),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey.withOpacity(0.5),
-                          spreadRadius: 5,
-                          blurRadius: 7,
-                          offset: Offset(0, 3), // changes position of shadow
-                        ),
-                      ],
-                      color: Colors.white),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: <Widget>[
-                      Text(
-                        '기본 가이드',
-                        style: TextStyle(fontSize: _size.width * .05, fontWeight: FontWeight.bold),
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: <Widget>[
-                          IconButton(
-                            onPressed: () {},
-                            iconSize: _size.width * 0.1,
-                            icon: Icon(Icons.fast_rewind),
-                          ),
-                          Container(
-                            child: IconButton(
-                              onPressed: () {
-                                setState(() {
-                                  _played = !_played;
-                                  
-                                });
-                              },
-                              iconSize: _size.width * 0.2,
-                              icon: Padding(
-                                  padding: EdgeInsets.all(0),
-                                  child: _played == true
-                                      ? Icon(Icons.pause)
-                                      : Icon(Icons.play_arrow)),
-                            ),
-                          ),
-                          IconButton(
-                            onPressed: () {},
-                            iconSize: _size.width * 0.1,
-                            icon: Icon(Icons.fast_forward),
-                          ),
-                        ],
-                      ),
-                      Container(
-                        margin: EdgeInsets.symmetric(horizontal: 40),
-                        child: Slider(
-                          value: temp,
-                          max: 100,
-                          min: 0,
-                          onChanged: (newVal) {
-                            setState(() {
-                              print(newVal);
-                              temp = newVal;
-                              if (newVal == 100) {
-                                _finished = true;
-                              } else {
-                                _finished = false;
-                              }
-                            });
-                          },
-                        ),
-                      ),
-                      Container(
-                        margin: EdgeInsets.symmetric(horizontal: 40),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: <Widget>[
-                            Text("00:00"),
-                            Text("15" + ":" + "00")
-                          ],
-                        ),
-                      )
-                    ],
-                  ),
-                ),
-              ),
+              _playerBox(),
               Visibility(
                 visible: _finished,
                 child: Container(
                   color: Colors.black.withOpacity(0.5),
                 ),
               ),
-              AnimatedPositioned(
-                curve: Curves.easeInOut,
-                duration: Duration(milliseconds: 200),
-                left: _size.width / 5,
-                right: _size.width / 5,
-                bottom: (_finished)
-                    ? (_size.height / 2) - (_size.height / 8)
-                    : -(_size.height / 4),
-                child: Container(
-                  height: _size.height / 4,
-                  decoration: BoxDecoration(
+              _finishedBox()
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Positioned _playerBox() {
+    return Positioned(
+              bottom: 40,
+              left: 20,
+              right: 20,
+              child: Container(
+                width: _size.width,
+                height: _size.height / 4,
+                decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20.0),
-                    color: Colors.white,
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.black.withOpacity(0.5),
+                        color: Colors.grey.withOpacity(0.5),
                         spreadRadius: 5,
                         blurRadius: 7,
                         offset: Offset(0, 3), // changes position of shadow
                       ),
                     ],
-                  ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: <Widget>[
-                      Text(
-                        'Well done!',
-                        style: TextStyle(fontSize: _size.width * 0.07, fontWeight: FontWeight.bold),
+                    color: Colors.white),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: <Widget>[
+                    Text(
+                      '기본 명상법',
+                      style: TextStyle(fontSize: _size.width * .05, fontWeight: FontWeight.bold),
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: <Widget>[
+                        IconButton(
+                          onPressed: () {},
+                          iconSize: _size.width * 0.1,
+                          icon: Icon(Icons.fast_rewind),
+                        ),
+                        Container(
+                          child: IconButton(
+                            onPressed: () {
+                              setState(() {
+                                _isPlaying = !_isPlaying;
+                                
+                              });
+                            },
+                            iconSize: _size.width * 0.2,
+                            icon: Padding(
+                                padding: EdgeInsets.all(0),
+                                child: _isPlaying == true
+                                    ? Icon(Icons.pause)
+                                    : Icon(Icons.play_arrow)),
+                          ),
+                        ),
+                        IconButton(
+                          onPressed: () {},
+                          iconSize: _size.width * 0.1,
+                          icon: Icon(Icons.fast_forward),
+                        ),
+                      ],
+                    ),
+                    Container(
+                      margin: EdgeInsets.symmetric(horizontal: 40),
+                      child: Slider(
+                        value: temp,
+                        max: 100,
+                        min: 0,
+                        onChanged: (newVal) {
+                          setState(() {
+                            print(newVal);
+                            temp = newVal;
+                            if (newVal == 100) {
+                              _finished = true;
+                            } else {
+                              _finished = false;
+                            }
+                          });
+                        },
                       ),
-                      SizedBox(
-                          width: _size.width * 0.2,
-                          height: _size.width * 0.2,
-                          child: Image.asset('assets/like_1.png')),
-                      Text(
-                        '화면을 터치하시면 메뉴로 이동합니다.',
-                        style: TextStyle(fontSize: _size.width * 0.03,
-                        color: Colors.black54),
-                      )
-                    ],
-                  ),
+                    ),
+                    Container(
+                      margin: EdgeInsets.symmetric(horizontal: 40),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: <Widget>[
+                          Text("00:00"),
+                          Text("15" + ":" + "00")
+                        ],
+                      ),
+                    )
+                  ],
                 ),
-              )
-            ],
-          ),
+              ),
+            );
+  }
+
+
+  AnimatedPositioned _finishedBox() {
+    return AnimatedPositioned(
+      curve: Curves.easeInOut,
+      duration: Duration(milliseconds: 200),
+      left: _size.width / 5,
+      right: _size.width / 5,
+      bottom: (_finished)
+          ? (_size.height / 2) - (_size.height / 8)
+          : -(_size.height / 4),
+      child: Container(
+        height: _size.height / 4,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(20.0),
+          color: Colors.white,
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.5),
+              spreadRadius: 5,
+              blurRadius: 7,
+              offset: Offset(0, 3), // changes position of shadow
+            ),
+          ],
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: <Widget>[
+            Text(
+              'Well done!',
+              style: TextStyle(fontSize: _size.width * 0.07, fontWeight: FontWeight.bold),
+            ),
+            SizedBox(
+                width: _size.width * 0.2,
+                height: _size.width * 0.2,
+                child: Image.asset('assets/like_1.png')),
+            Text(
+              '화면을 터치하시면 메뉴로 이동합니다.',
+              style: TextStyle(fontSize: _size.width * 0.03,
+                  color: Colors.black54),
+            )
+          ],
         ),
       ),
     );
